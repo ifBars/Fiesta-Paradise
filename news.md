@@ -30,5 +30,3 @@ title: "Game Rules"
     <p>3. Safety rule 3 description.</p>
   </div>
 </div>
-
-<script src="{{ '/assets/js/dropdown.js' | relative_url }}"></script>
