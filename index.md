@@ -26,13 +26,13 @@ Welcome to the official website for Fiesta Paradise! Use the navigation bar to e
     // Position the camera
     camera.position.z = 5;
 
-    // Variables for inertia
-    let angularVelocity = {
+    // Variables to track mouse movement
+    let isDragging = false;
+    let previousMousePosition = {
         x: 0,
         y: 0
     };
-    let isDragging = false;
-    let previousMousePosition = {
+    let rotationSpeed = {
         x: 0,
         y: 0
     };
@@ -40,19 +40,18 @@ Welcome to the official website for Fiesta Paradise! Use the navigation bar to e
     // Add animation
     function animate() {
         requestAnimationFrame(animate);
-        if (!isDragging) {
-            cube.rotation.x += angularVelocity.x;
-            cube.rotation.y += angularVelocity.y;
+        cube.rotation.x += rotationSpeed.x;
+        cube.rotation.y += rotationSpeed.y;
 
-            // Apply inertia (reduce angular velocity)
-            angularVelocity.x *= 0.99;
-            angularVelocity.y *= 0.99;
-        }
+        // Gradually reduce rotation speed (simulate friction)
+        rotationSpeed.x *= 0.95;
+        rotationSpeed.y *= 0.95;
+
         renderer.render(scene, camera);
     }
     animate();
 
-    // Add mouse interaction for applying force
+    // Add mouse interaction for dragging
     window.addEventListener('mousedown', onMouseDown, false);
     window.addEventListener('mouseup', onMouseUp, false);
     window.addEventListener('mousemove', onMouseMove, false);
@@ -67,9 +66,6 @@ Welcome to the official website for Fiesta Paradise! Use the navigation bar to e
 
     function onMouseUp() {
         isDragging = false;
-        // Calculate angular velocity based on mouse movement
-        angularVelocity.x = (event.clientY - previousMousePosition.y) * 0.001;
-        angularVelocity.y = (event.clientX - previousMousePosition.x) * 0.001;
     }
 
     function onMouseMove(event) {
@@ -79,9 +75,9 @@ Welcome to the official website for Fiesta Paradise! Use the navigation bar to e
                 y: event.clientY - previousMousePosition.y
             };
 
-            // Apply force while dragging
-            cube.rotation.x += deltaMove.y * 0.01;
-            cube.rotation.y += deltaMove.x * 0.01;
+            // Apply a force based on mouse movement
+            rotationSpeed.x += deltaMove.y * 0.01;
+            rotationSpeed.y += deltaMove.x * 0.01;
 
             previousMousePosition = {
                 x: event.clientX,
