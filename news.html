@@ -3,6 +3,7 @@ layout: default
 title: "News"
 ---
 
+<article class="news">
 <h1>News</h1>
 {% assign news_posts = site.news | sort: 'date' | reverse %}
 {% for post in news_posts limit:10 %}
@@ -22,3 +23,4 @@ title: "News"
 <footer>
     <p>Fiesta Paradise Management</p>
 </footer>
+</article>
