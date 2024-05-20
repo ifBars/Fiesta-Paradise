@@ -4,94 +4,59 @@ title: "Home"
 ---
 Welcome to the official website for Fiesta Paradise! Use the navigation bar to explore our rules, staff handbook, and join our Discord server.
 
-# Floating Dots Canvas
+## Interactive Three.js Cube
 
-<canvas id="floating-dots-canvas"></canvas>
+<div id="threejs-canvas"></div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-  const canvas = document.getElementById('floating-dots-canvas');
-  const ctx = canvas.getContext('2d');
+    // Set up scene, camera, and renderer
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById('threejs-canvas').appendChild(renderer.domElement);
 
-  // Set canvas size
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+    // Create a cube
+    const geometry = new THREE.BoxGeometry();
+    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    const cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
 
-  // Create array to store dots
-  const dots = [];
-  const numDots = 100;
+    // Position the camera
+    camera.position.z = 5;
 
-  // Function to generate random number within a range
-  function randomRange(min, max) {
-    return Math.random() * (max - min) + min;
-  }
+    // Add animation
+    function animate() {
+        requestAnimationFrame(animate);
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+        renderer.render(scene, camera);
+    }
+    animate();
 
-  // Dot class
-  class Dot {
-    constructor() {
-      this.x = randomRange(0, canvas.width);
-      this.y = randomRange(0, canvas.height);
-      this.radius = 2;
-      this.color = '#ffffff';
-      this.velocity = {
-        x: randomRange(-2, 2),
-        y: randomRange(-2, 2)
-      };
+    // Add mouse interaction
+    const raycaster = new THREE.Raycaster();
+    const mouse = new THREE.Vector2();
+
+    function onMouseMove(event) {
+        // Calculate mouse position in normalized device coordinates
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+        // Update the picking ray with the camera and mouse position
+        raycaster.setFromCamera(mouse, camera);
+
+        // Calculate objects intersecting the picking ray
+        const intersects = raycaster.intersectObjects(scene.children);
+
+        if (intersects.length > 0) {
+            // Change cube color when mouse hovers over it
+            cube.material.color.set(0xff0000);
+        } else {
+            cube.material.color.set(0x00ff00);
+        }
     }
 
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = this.color;
-      ctx.fill();
-    }
-
-    update() {
-      this.x += this.velocity.x;
-      this.y += this.velocity.y;
-
-      // Bounce off walls
-      if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
-        this.velocity.x = -this.velocity.x;
-      }
-
-      if (this.y + this.radius > canvas.height || this.y - this.radius < 0) {
-        this.velocity.y = -this.velocity.y;
-      }
-
-      // Move away from mouse when near
-      const dx = this.x - mouseX;
-      const dy = this.y - mouseY;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-      if (distance < 100) {
-        this.velocity.x = dx / distance;
-        this.velocity.y = dy / distance;
-      }
-
-      this.draw();
-    }
-  }
-
-  // Initialize dots
-  for (let i = 0; i < numDots; i++) {
-    dots.push(new Dot());
-  }
-
-  // Mouse position
-  let mouseX, mouseY;
-  canvas.addEventListener('mousemove', function(event) {
-    mouseX = event.clientX;
-    mouseY = event.clientY;
-  });
-
-  // Animation loop
-  function animate() {
-    requestAnimationFrame(animate);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    dots.forEach(dot => {
-      dot.update();
-    });
-  }
-
-  animate();
+    window.addEventListener('mousemove', onMouseMove, false);
 </script>
