@@ -80,6 +80,11 @@ nav {
   overflow: hidden; /* Clear floats within the navigation */
 }
 
+.news {
+	margin-bottom: 0.5em;
+	margin-left: 20px;
+}
+
 /* Apply the same padding to news posts as page content */
 .news-post {
     margin-bottom: 1em;
