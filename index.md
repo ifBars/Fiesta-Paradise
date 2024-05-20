@@ -26,7 +26,11 @@ Welcome to the official website for Fiesta Paradise! Use the navigation bar to e
     // Position the camera
     camera.position.z = 5;
 
-    // Variables to track mouse dragging
+    // Variables for inertia
+    let angularVelocity = {
+        x: 0,
+        y: 0
+    };
     let isDragging = false;
     let previousMousePosition = {
         x: 0,
@@ -37,14 +41,18 @@ Welcome to the official website for Fiesta Paradise! Use the navigation bar to e
     function animate() {
         requestAnimationFrame(animate);
         if (!isDragging) {
-            cube.rotation.x += 0.01;
-            cube.rotation.y += 0.01;
+            cube.rotation.x += angularVelocity.x;
+            cube.rotation.y += angularVelocity.y;
+
+            // Apply inertia (reduce angular velocity)
+            angularVelocity.x *= 0.99;
+            angularVelocity.y *= 0.99;
         }
         renderer.render(scene, camera);
     }
     animate();
 
-    // Add mouse interaction for dragging
+    // Add mouse interaction for applying force
     window.addEventListener('mousedown', onMouseDown, false);
     window.addEventListener('mouseup', onMouseUp, false);
     window.addEventListener('mousemove', onMouseMove, false);
@@ -59,6 +67,9 @@ Welcome to the official website for Fiesta Paradise! Use the navigation bar to e
 
     function onMouseUp() {
         isDragging = false;
+        // Calculate angular velocity based on mouse movement
+        angularVelocity.x = (event.clientY - previousMousePosition.y) * 0.001;
+        angularVelocity.y = (event.clientX - previousMousePosition.x) * 0.001;
     }
 
     function onMouseMove(event) {
@@ -68,6 +79,7 @@ Welcome to the official website for Fiesta Paradise! Use the navigation bar to e
                 y: event.clientY - previousMousePosition.y
             };
 
+            // Apply force while dragging
             cube.rotation.x += deltaMove.y * 0.01;
             cube.rotation.y += deltaMove.x * 0.01;
 
