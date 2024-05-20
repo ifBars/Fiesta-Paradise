@@ -42,17 +42,17 @@ Interested in joining our team? Follow these steps to apply and get trained for 
 <div class="dropdown">
   <button class="dropbtn">Application Process</button>
   <div class="dropdown-content">
-    <p>1. Visit the Application Center and select the role you're interested in.</p>
+    <p>1. Visit the Employee Center and select the role you're interested in.</p>
     <p>2. Fill out the application form with detailed responses and correct grammar.</p>
     <p>3. Submit your application and wait for a response within 48-72 hours.</p>
-    <p>4. If approved, you will be ranked as an Intern and scheduled for training sessions.</p>
+    <p>4. If approved, you will be ranked as an Intern and will be able to attend training sessions.</p>
   </div>
 </div>
 
 <div class="dropdown">
   <button class="dropbtn">Training Schedule</button>
   <div class="dropdown-content">
-    <p>1. Attend the training sessions specific to your role.</p>
+    <p>1. Attend the training session specific to your role.</p>
     <p>2. Successfully complete the training to be promoted to an official staff member.</p>
     <p>3. You may attend multiple training sessions if you do not pass on your first attempt.</p>
   </div>
@@ -131,4 +131,3 @@ Thank you for being a part of Fiesta Paradise! We look forward to creating wonde
 
 ---
 Fiesta Paradise Management
----

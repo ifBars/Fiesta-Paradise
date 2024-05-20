@@ -51,4 +51,3 @@ Thank you for following the rules and helping to create a pleasant environment a
 
 ---
 Fiesta Paradise Management
----
