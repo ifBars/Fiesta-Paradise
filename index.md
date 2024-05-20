@@ -4,79 +4,94 @@ title: "Home"
 ---
 Welcome to the official website for Fiesta Paradise! Use the navigation bar to explore our rules, staff handbook, and join our Discord server.
 
-## Interactive Floating Dots
+# Floating Dots Canvas
 
-<div id="canvas-container"></div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<canvas id="floating-dots-canvas"></canvas>
 
 <script>
-  var scene, camera, renderer;
-  var dots = [];
-  var mouse = new THREE.Vector2();
-  var speed = 0.1;
+  const canvas = document.getElementById('floating-dots-canvas');
+  const ctx = canvas.getContext('2d');
 
-  function init() {
-    scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 5;
+  // Set canvas size
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 
-    renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.getElementById('canvas-container').appendChild(renderer.domElement);
+  // Create array to store dots
+  const dots = [];
+  const numDots = 100;
 
-    createDots();
-    document.addEventListener('mousemove', onMouseMove, false);
-
-    animate();
+  // Function to generate random number within a range
+  function randomRange(min, max) {
+    return Math.random() * (max - min) + min;
   }
 
-  function createDots() {
-    var geometry = new THREE.Geometry();
-    var material = new THREE.PointsMaterial({ color: 0xffffff });
-
-    for (var i = 0; i < 100; i++) {
-      var dot = new THREE.Vector3(
-        Math.random() * 10 - 5,
-        Math.random() * 10 - 5,
-        Math.random() * 10 - 5
-      );
-      geometry.vertices.push(dot);
-      dots.push(dot);
+  // Dot class
+  class Dot {
+    constructor() {
+      this.x = randomRange(0, canvas.width);
+      this.y = randomRange(0, canvas.height);
+      this.radius = 2;
+      this.color = '#ffffff';
+      this.velocity = {
+        x: randomRange(-2, 2),
+        y: randomRange(-2, 2)
+      };
     }
 
-    var points = new THREE.Points(geometry, material);
-    scene.add(points);
-  }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = this.color;
+      ctx.fill();
+    }
 
-  function onMouseMove(event) {
-    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
-  }
+    update() {
+      this.x += this.velocity.x;
+      this.y += this.velocity.y;
 
-  function animate() {
-    requestAnimationFrame(animate);
-
-    for (var i = 0; i < dots.length; i++) {
-      var dot = dots[i];
-      var distance = dot.distanceTo(camera.position);
-
-      if (distance < 1) {
-        dot.x -= (dot.x - mouse.x) * speed;
-        dot.y -= (dot.y - mouse.y) * speed;
-      } else {
-        dot.x += Math.random() * 0.01 - 0.005;
-        dot.y += Math.random() * 0.01 - 0.005;
+      // Bounce off walls
+      if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
+        this.velocity.x = -this.velocity.x;
       }
 
-      if (dot.x > 5) dot.x = -5;
-      if (dot.x < -5) dot.x = 5;
-      if (dot.y > 5) dot.y = -5;
-      if (dot.y < -5) dot.y = 5;
-    }
+      if (this.y + this.radius > canvas.height || this.y - this.radius < 0) {
+        this.velocity.y = -this.velocity.y;
+      }
 
-    renderer.render(scene, camera);
+      // Move away from mouse when near
+      const dx = this.x - mouseX;
+      const dy = this.y - mouseY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      if (distance < 100) {
+        this.velocity.x = dx / distance;
+        this.velocity.y = dy / distance;
+      }
+
+      this.draw();
+    }
   }
 
-  init();
+  // Initialize dots
+  for (let i = 0; i < numDots; i++) {
+    dots.push(new Dot());
+  }
+
+  // Mouse position
+  let mouseX, mouseY;
+  canvas.addEventListener('mousemove', function(event) {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+  });
+
+  // Animation loop
+  function animate() {
+    requestAnimationFrame(animate);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    dots.forEach(dot => {
+      dot.update();
+    });
+  }
+
+  animate();
 </script>
