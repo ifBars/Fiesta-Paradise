@@ -113,3 +113,8 @@ hr {
     background: #ddd;
     margin: 2em 0;
 }
+
+/* Style for footer */
+footer {
+    margin-left: 20px; /* Add margin to the top of the footer */
+}
