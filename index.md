@@ -22,10 +22,19 @@ Welcome to the official website for Fiesta Paradise! Use the navigation bar to e
   var cube = new THREE.Mesh(geometry, material);
   scene.add(cube);
 
+  var mouseX = 0, mouseY = 0;
+
+  function onDocumentMouseMove(event) {
+    mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+    mouseY = - (event.clientY / window.innerHeight) * 2 + 1;
+  }
+
+  document.addEventListener('mousemove', onDocumentMouseMove, false);
+
   function animate() {
     requestAnimationFrame(animate);
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
+    cube.rotation.x += (mouseY - cube.rotation.x) * 0.05;
+    cube.rotation.y += (mouseX - cube.rotation.y) * 0.05;
     renderer.render(scene, camera);
   }
 
