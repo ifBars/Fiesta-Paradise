@@ -1,9 +1,8 @@
 ---
 layout: page
-title: "Rules & Regulations"
+title: "Game Rules"
 ---
-
-# Rules & Regulations
+### Game Rules
 
 <div class="dropdown">
   <button class="dropbtn">General Rules</button>

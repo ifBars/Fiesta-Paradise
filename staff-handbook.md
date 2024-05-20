@@ -2,8 +2,7 @@
 layout: page
 title: "Staff Handbook"
 ---
-
-# Staff Handbook
+### Staff Handbook
 
 <div class="dropdown">
   <button class="dropbtn">Code of Conduct</button>
