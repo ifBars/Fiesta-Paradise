@@ -61,3 +61,30 @@ nav ul li a {
 .dropdown.active .dropdown-content {
   display: block;
 }
+
+.news-post {
+    margin-bottom: 2em;
+}
+
+.news-post h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.news-post img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1em;
+}
+
+.post-content {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 2em 0;
+}
