@@ -67,6 +67,19 @@ nav ul li a {
   display: block; /* Display dropdown content when dropdown is active */
 }
 
+.logo-container {
+  float: left; /* Float the logo container to the left */
+  margin-right: 20px; /* Add right margin to separate the logo from the navigation */
+}
+
+.logo {
+  display: block; /* Ensure the logo is displayed as a block element */
+}
+
+nav {
+  overflow: hidden; /* Clear floats within the navigation */
+}
+
 /* Apply the same padding to news posts as page content */
 .news-post {
     margin-bottom: 1em;
