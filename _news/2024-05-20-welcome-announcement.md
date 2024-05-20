@@ -19,7 +19,3 @@ Fiesta Paradise offers a variety of roles for players, including Bartender, Host
 We're committed to creating a safe and enjoyable environment for all players. Please familiarize yourself with our [Game Rules](link-to-game-rules-page) and [Staff Handbook](link-to-staff-handbook-page) to ensure a positive experience for everyone.
 
 Stay tuned for more updates, and we can't wait to see you at Fiesta Paradise!
-
----
-
-Fiesta Paradise Management

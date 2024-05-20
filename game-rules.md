@@ -48,3 +48,7 @@ Welcome to Fiesta Paradise! To ensure a fun and enjoyable experience for everyon
 </div>
 
 Thank you for following the rules and helping to create a pleasant environment at Fiesta Paradise!
+
+---
+Fiesta Paradise Management
+---
