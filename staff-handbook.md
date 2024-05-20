@@ -5,12 +5,29 @@ title: "Staff Handbook"
 
 # Staff Handbook
 
-## Section 1: Introduction
+<div class="dropdown">
+  <button class="dropbtn">Code of Conduct</button>
+  <div class="dropdown-content">
+    <p>1. Conduct policy 1 description.</p>
+    <p>2. Conduct policy 2 description.</p>
+    <p>3. Conduct policy 3 description.</p>
+  </div>
+</div>
 
-Welcome to the company! This handbook will guide you through our policies and procedures.
+<div class="dropdown">
+  <button class="dropbtn">Employment Policies</button>
+  <div class="dropdown-content">
+    <p>1. Employment policy 1 description.</p>
+    <p>2. Employment policy 2 description.</p>
+    <p>3. Employment policy 3 description.</p>
+  </div>
+</div>
 
-## Section 2: Code of Conduct
-
-1. **Policy 1**: Description of the first policy.
-2. **Policy 2**: Description of the second policy.
-3. **Policy 3**: Description of the third policy.
+<div class="dropdown">
+  <button class="dropbtn">Benefits</button>
+  <div class="dropdown-content">
+    <p>1. Benefit 1 description.</p>
+    <p>2. Benefit 2 description.</p>
+    <p>3. Benefit 3 description.</p>
+  </div>
+</div>
