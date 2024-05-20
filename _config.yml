@@ -2,7 +2,7 @@ title: "Fiesta Paradise"
 description: "Welcome to Fiesta Paradise! Your guide to our rules and staff handbook."
 baseurl: "/Fiesta-Paradise"
 url: "https://ifbars.github.io"
-theme: minima
+theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
