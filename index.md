@@ -26,37 +26,55 @@ Welcome to the official website for Fiesta Paradise! Use the navigation bar to e
     // Position the camera
     camera.position.z = 5;
 
+    // Variables to track mouse dragging
+    let isDragging = false;
+    let previousMousePosition = {
+        x: 0,
+        y: 0
+    };
+
     // Add animation
     function animate() {
         requestAnimationFrame(animate);
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
+        if (!isDragging) {
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+        }
         renderer.render(scene, camera);
     }
     animate();
 
-    // Add mouse interaction
-    const raycaster = new THREE.Raycaster();
-    const mouse = new THREE.Vector2();
+    // Add mouse interaction for dragging
+    window.addEventListener('mousedown', onMouseDown, false);
+    window.addEventListener('mouseup', onMouseUp, false);
+    window.addEventListener('mousemove', onMouseMove, false);
 
-    function onMouseMove(event) {
-        // Calculate mouse position in normalized device coordinates
-        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-        // Update the picking ray with the camera and mouse position
-        raycaster.setFromCamera(mouse, camera);
-
-        // Calculate objects intersecting the picking ray
-        const intersects = raycaster.intersectObjects(scene.children);
-
-        if (intersects.length > 0) {
-            // Change cube color when mouse hovers over it
-            cube.material.color.set(0xff0000);
-        } else {
-            cube.material.color.set(0x00ff00);
-        }
+    function onMouseDown(event) {
+        isDragging = true;
+        previousMousePosition = {
+            x: event.clientX,
+            y: event.clientY
+        };
     }
 
-    window.addEventListener('mousemove', onMouseMove, false);
+    function onMouseUp() {
+        isDragging = false;
+    }
+
+    function onMouseMove(event) {
+        if (isDragging) {
+            const deltaMove = {
+                x: event.clientX - previousMousePosition.x,
+                y: event.clientY - previousMousePosition.y
+            };
+
+            cube.rotation.x += deltaMove.y * 0.01;
+            cube.rotation.y += deltaMove.x * 0.01;
+
+            previousMousePosition = {
+                x: event.clientX,
+                y: event.clientY
+            };
+        }
+    }
 </script>
