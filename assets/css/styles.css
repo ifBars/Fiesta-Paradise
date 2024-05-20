@@ -69,7 +69,7 @@ nav ul li a {
 
 .logo-container {
   float: left; /* Float the logo container to the left */
-  margin-right: 20px; /* Add right margin to separate the logo from the navigation */
+  margin-right: 15px; /* Add right margin to separate the logo from the navigation */
 }
 
 .logo {
@@ -116,5 +116,5 @@ hr {
 
 /* Style for footer */
 footer {
-    margin-left: 20px; /* Add margin to the left of the footer */
+    margin-left: 5px; /* Add margin to the left of the footer */
 }
