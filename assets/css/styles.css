@@ -67,35 +67,36 @@ nav ul li a {
   display: block; /* Display dropdown content when dropdown is active */
 }
 
-/* Style the news post section */
+/* Apply the same padding to news posts as page content */
 .news-post {
-  margin-bottom: 1em; /* Add bottom margin to separate news posts */
-  padding: 20px; /* Add padding around news posts */
+    margin-bottom: 1em;
+    padding: 20px; /* Same padding as .page-content */
+    margin-left: 20px; /* Add left margin to news posts */
 }
 
 /* Style for news post headings */
 .news-post h2 {
-  font-size: 1.5em; /* Set font size of news post headings */
-  margin-bottom: 0.5em; /* Add bottom margin to headings */
+    font-size: 2em;
+    margin-bottom: 0.5em;
 }
 
 /* Style for news post images */
 .news-post img {
-  max-width: 100%; /* Ensure images don't exceed their container width */
-  height: auto; /* Maintain aspect ratio of images */
-  margin-bottom: 1em; /* Add bottom margin to images */
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1em;
 }
 
 /* Style for news post content */
 .post-content {
-  font-size: 1em; /* Set font size for news post content */
-  line-height: 1.5; /* Set line height for better readability */
+    font-size: 1em;
+    line-height: 1.5;
 }
 
 /* Style for horizontal rule */
 hr {
-  border: 0; /* Remove default border */
-  height: 1px; /* Set height of the horizontal rule */
-  background: #ddd; /* Set background color */
-  margin: 2em 0; /* Add margin above and below the horizontal rule */
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 2em 0;
 }
