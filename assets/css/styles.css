@@ -68,8 +68,7 @@ nav ul li a {
 }
 
 .logo-container {
-  float: left; /* Float the logo container to the left */
-  margin-right: 5px; /* Add right margin to separate the logo from the navigation */
+
 }
 
 .logo {
@@ -80,30 +79,46 @@ nav {
   overflow: hidden; /* Clear floats within the navigation */
 }
 
-/* Apply the same padding to news posts as page content */
+.news-container {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
 .news-post {
-    margin-bottom: 1em;
-    padding: 20px; /* Same padding as .page-content */
-    margin-left: 20px; /* Add left margin to news posts */
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Style for news post headings */
 .news-post h2 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
+  margin-top: 0;
+  font-size: 24px;
 }
 
-/* Style for news post images */
-.news-post img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 1em;
+.post-date {
+  color: #888;
+  margin-bottom: 10px;
 }
 
-/* Style for news post content */
+.post-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
 .post-content {
-    font-size: 1em;
-    line-height: 1.5;
+  font-size: 16px;
+}
+
+.post-divider {
+  border: 0;
+  height: 1px;
+  background: #ddd;
+  margin: 40px 0;
 }
 
 /* Style for horizontal rule */
