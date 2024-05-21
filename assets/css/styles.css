@@ -16,15 +16,12 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
   position: relative;
 }
 
 .logo-container {
   position: absolute;
-  left: 20px; /* Set the distance of the logo from the left edge */
+  left: 10px; /* Set the distance of the logo from the left edge */
 }
 
 .logo-container a {
