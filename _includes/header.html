@@ -1,17 +1,25 @@
 <header>
   <nav>
     <div class="logo-container">
-      <img src="{{ '/assets/images/logo-small.png' | relative_url }}" alt="Fiesta Paradise Logo" class="logo">
+      <a href="{{ '/' | relative_url }}">
+        <img src="{{ '/assets/images/logo-small.png' | relative_url }}" alt="Fiesta Paradise Logo" class="logo">
+      </a>
     </div>
-    <ul>
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="nav-links">
       <li><a href="{{ '/' | relative_url }}">Home</a></li>
       <li><a href="{{ '/game-rules' | relative_url }}">Game Rules</a></li>
       <li><a href="{{ '/staff-handbook' | relative_url }}">Staff Handbook</a></li>
       <li><a href="{{ '/news' | relative_url }}">News</a></li>
       <li><a href="https://discord.gg/hKqgVrXjRF">Discord Server</a></li>
-      <li><a href="">Roblox Employee Center</a></li>
+      <li><a href="#">Roblox Employee Center</a></li>
     </ul>
   </nav>
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
   <script src="{{ '/assets/js/dropdown.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/mobile-menu.js' | relative_url }}"></script>
 </header>

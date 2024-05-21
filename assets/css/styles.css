@@ -1,17 +1,24 @@
-/* Set the font family and line height for the entire page */
 body {
-  font-family: Arial, sans-serif; /* Use Arial font if available, otherwise use a generic sans-serif font */
-  line-height: 1.6; /* Set the spacing between lines of text */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
-/* Style the header section */
 header {
-  background: #333; /* Set the background color to dark gray */
-  color: #fff; /* Set the text color to white */
-  padding: 10px 0; /* Add padding on the top and bottom */
-  text-align: center; /* Center-align text */
+  background: #333;
+  color: #fff;
+  padding: 10px 0;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* Style the navigation menu */
@@ -28,6 +35,55 @@ nav ul li {
 nav ul li a {
   color: #fff; /* Set link text color to white */
   text-decoration: none; /* Remove default underline from links */
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  transition: background 0.3s;
+}
+
+.nav-links li a:hover {
+  background: #575757;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    border-top: 1px solid #575757;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
 }
 
 /* Style the main content area of the page */
@@ -67,12 +123,25 @@ nav ul li a {
   display: block; /* Display dropdown content when dropdown is active */
 }
 
-.logo-container {
-
+.logo-container a {
+  display: inline-block;
 }
 
 .logo {
-  display: block; /* Ensure the logo is displayed as a block element */
+  height: 50px;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin: 4px 0;
 }
 
 nav {
