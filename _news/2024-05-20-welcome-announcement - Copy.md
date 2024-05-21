@@ -36,5 +36,3 @@ Join us for regular community events where you can socialize, play mini-games, a
 Stay connected with the Fiesta Paradise community by joining our [Discord server](https://discord.gg/yourdiscordlink). It’s the best place to get updates, participate in events, and chat with other players.
 
 Thank you for being a part of Fiesta Paradise. We can’t wait to see you in the game and make some amazing memories together!
-
-- Fiesta Paradise Management

@@ -15,26 +15,24 @@ header {
 nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  position: relative;
 }
 
-/* Style the navigation menu */
-nav ul {
-  list-style: none; /* Remove default list bullets */
-  padding: 0; /* Remove default padding */
+.logo-container {
+  position: absolute;
+  left: 20px; /* Set the distance of the logo from the left edge */
 }
 
-nav ul li {
-  display: inline; /* Display list items horizontally */
-  margin: 0 10px; /* Add margin on the left and right sides */
+.logo-container a {
+  display: inline-block;
 }
 
-nav ul li a {
-  color: #fff; /* Set link text color to white */
-  text-decoration: none; /* Remove default underline from links */
+.logo {
+  height: 50px;
 }
 
 .nav-links {
@@ -58,6 +56,19 @@ nav ul li a {
 .nav-links li a:hover {
   background: #575757;
   border-radius: 4px;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin: 4px 0;
 }
 
 @media (max-width: 768px) {
@@ -86,67 +97,36 @@ nav ul li a {
   }
 }
 
-/* Style the main content area of the page */
-.page-content {
-  padding: 20px; /* Add padding around the content */
-}
-
-/* Style the dropdown menu */
+/* Additional styles for dropdowns in other pages */
 .dropdown {
-  margin: 10px 0; /* Add margin above and below the dropdown */
+  margin: 10px 0;
 }
 
 .dropbtn {
-  background-color: #4CAF50; /* Set the background color of the dropdown button */
-  color: white; /* Set text color to white */
-  padding: 16px; /* Add padding inside the button */
-  font-size: 16px; /* Set the font size */
-  border: none; /* Remove border */
-  cursor: pointer; /* Change cursor to pointer when hovering over the button */
-  width: 100%; /* Set button width to 100% */
-  text-align: left; /* Left-align button text */
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
 }
 
 .dropdown-content {
-  display: none; /* Hide dropdown content by default */
-  background-color: #f9f9f9; /* Set background color of dropdown content */
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Add shadow effect */
-  padding: 12px 16px; /* Add padding inside dropdown content */
-  z-index: 1; /* Set the stacking order of dropdown content */
+  display: none;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
 }
 
 .dropdown-content p {
-  margin: 0; /* Remove default margin for paragraphs inside dropdown content */
+  margin: 0;
 }
 
 .dropdown.active .dropdown-content {
-  display: block; /* Display dropdown content when dropdown is active */
-}
-
-.logo-container a {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-.logo {
-  height: 50px;
-}
-
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.menu-toggle .bar {
-  height: 3px;
-  width: 25px;
-  background-color: #fff;
-  margin: 4px 0;
-}
-
-nav {
-  overflow: hidden; /* Clear floats within the navigation */
+  display: block;
 }
 
 .news-container {
@@ -193,8 +173,8 @@ nav {
 
 /* Style for horizontal rule */
 hr {
-    border: 0;
-    height: 1px;
-    background: #ddd;
-    margin: 2em 0;
+  border: 0;
+  height: 1px;
+  background: #ddd;
+  margin: 2em 0;
 }
