@@ -9,8 +9,98 @@ body {
 header {
   background: #333;
   color: #fff;
-  padding: 15px 30px;
-  text-align: center;
+  padding: 10px 20px; /* Increased padding for better spacing */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container {
+  margin-right: 20px; /* Adjusted margin for the logo */
+}
+
+.logo-container a {
+  display: inline-block;
+}
+
+.logo {
+  height: 50px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto; /* Center the navigation links horizontally */
+}
+
+.nav-links li {
+  display: inline-block;
+  margin-left: 20px; /* Adjusted spacing between navigation links */
+}
+
+.nav-links li:first-child {
+  margin-left: 0; /* Remove margin for the first navigation link */
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  transition: background 0.3s;
+}
+
+.nav-links li a:hover {
+  background: #575757;
+  border-radius: 4px;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    border-top: 1px solid #575757;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .hero-overlay {
+    top: 40%;
+  }
+
+  .job-list, .feature-list {
+    flex-direction: column;
+  }
 }
 
 .hero {
@@ -87,14 +177,4 @@ p {
 
 .contact-content {
   text-align: center;
-}
-
-@media (max-width: 768px) {
-  .hero-overlay {
-    top: 40%;
-  }
-
-  .job-list, .feature-list {
-    flex-direction: column;
-  }
 }
