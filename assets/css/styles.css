@@ -17,6 +17,25 @@ nav {
   align-items: center;
 }
 
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  opacity: 0.8;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .logo-container {
   margin-right: 20px; /* Adjusted margin for the logo */
 }
@@ -85,7 +104,7 @@ nav {
     left: 0;
     border-top: 1px solid #575757;
   }
-  
+
   .nav-links li {
     margin: 10px 0;
   }
@@ -93,33 +112,6 @@ nav {
   .nav-links.active {
     display: flex;
   }
-  
-  .hero-overlay {
-    top: 40%;
-  }
-
-  .job-list, .feature-list {
-    flex-direction: column;
-  }
-}
-
-.hero {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-
-.hero-image {
-  width: 100%;
-  height: auto;
-  opacity: 0.8;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .cta-button {
@@ -136,47 +128,9 @@ nav {
   background: #e5533d;
 }
 
-.content-wrapper {
-  padding: 40px 20px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-section {
-  margin-bottom: 40px;
-}
-
-h3 {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-p {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.job-list, .feature-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.job-role, .feature-item {
-  background: #f9f9f9;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  flex: 1 1 calc(50% - 20px);
-  min-width: 250px;
-}
-
-.job-role h4, .feature-item h4 {
-  margin-top: 0;
-}
-
-.contact-content {
-  text-align: center;
+/* Additional styles for dropdowns in other pages */
+.dropdown {
+  margin: 10px 0;
 }
 
 .dropbtn {
@@ -204,6 +158,20 @@ p {
 
 .dropdown.active .dropdown-content {
   display: block;
+}
+
+.news-container {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.news-post {
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .news-post h2 {
