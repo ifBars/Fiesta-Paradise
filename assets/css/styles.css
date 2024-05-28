@@ -17,17 +17,6 @@ nav {
   align-items: center;
 }
 
-.hero {
-  text-align: center;
-  color: white;
-}
-
-.hero-image {
-  width: 100%;
-  height: auto;
-  opacity: 0.8;
-}
-
 .logo-container {
   margin-right: 20px; /* Adjusted margin for the logo */
 }
@@ -105,10 +94,6 @@ nav {
     display: flex;
   }
   
-  .hero-overlay {
-    top: 40%;
-  }
-
   .job-list, .feature-list {
     flex-direction: column;
   }
