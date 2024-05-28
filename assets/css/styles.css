@@ -1,228 +1,228 @@
 body {
-  font-family: 'Helvetica Neue', sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  color: #333;
+  font-family: 'Helvetica Neue', sans-serif; /* Sets the font family for the entire page */
+  line-height: 1.6; /* Sets the line height for better readability */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  color: #333; /* Sets the default text color */
 }
 
 header {
-  background: #333;
-  color: #fff;
-  padding: 10px 20px; /* Increased padding for better spacing */
+  background: #333; /* Sets the background color of the header */
+  color: #fff; /* Sets the text color in the header */
+  padding: 10px 20px; /* Adjust the padding for better spacing */
 }
 
 nav {
-  display: flex;
-  align-items: center;
+  display: flex; /* Uses flexbox for layout */
+  align-items: center; /* Aligns items vertically */
 }
 
 .hero {
-  position: relative;
-  text-align: center;
+  position: relative; /* Allows positioning of child elements relative to this element */
+  text-align: center; /* Centers the text within the hero section */
 }
 
 .logo-container {
-  margin-right: 20px; /* Adjusted margin for the logo */
+  margin-right: 20px; /* Adjusts the margin to the right of the logo */
 }
 
 .logo-container a {
-  display: inline-block;
+  display: inline-block; /* Makes the link an inline-block element */
 }
 
 .logo {
-  height: 50px;
+  height: 50px; /* Sets the height of the logo */
 }
 
 .nav-links {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto; /* Center the navigation links horizontally */
+  list-style: none; /* Removes default list styling */
+  padding: 0; /* Removes default padding */
+  margin: 0 auto; /* Centers the navigation links horizontally */
 }
 
 .nav-links li {
-  display: inline-block;
-  margin-left: 20px; /* Adjusted spacing between navigation links */
+  display: inline-block; /* Makes each list item an inline-block */
+  margin-left: 20px; /* Adjusts spacing between navigation links */
 }
 
 .nav-links li:first-child {
-  margin-left: 0; /* Remove margin for the first navigation link */
+  margin-left: 0; /* Removes left margin for the first navigation link */
 }
 
 .nav-links li a {
-  color: #fff;
-  text-decoration: none;
-  padding: 5px 10px;
-  transition: background 0.3s;
+  color: #fff; /* Sets the text color of the navigation links */
+  text-decoration: none; /* Removes underline from links */
+  padding: 5px 10px; /* Adds padding inside the links */
+  transition: background 0.3s; /* Adds a transition effect for background color */
 }
 
 .nav-links li a:hover {
-  background: #575757;
-  border-radius: 4px;
+  background: #575757; /* Changes background color on hover */
+  border-radius: 4px; /* Adds rounded corners on hover */
 }
 
 .menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
+  display: none; /* Hides the menu toggle by default */
+  flex-direction: column; /* Makes the toggle icon a column flex container */
+  cursor: pointer; /* Changes cursor to pointer */
 }
 
 .menu-toggle .bar {
-  height: 3px;
-  width: 25px;
-  background-color: #fff;
-  margin: 4px 0;
+  height: 3px; /* Sets height of each bar in the toggle */
+  width: 25px; /* Sets width of each bar in the toggle */
+  background-color: #fff; /* Sets the color of the bars */
+  margin: 4px 0; /* Adds spacing between the bars */
 }
 
 @media (max-width: 768px) {
   .menu-toggle {
-    display: flex;
+    display: flex; /* Displays the menu toggle on small screens */
   }
 
   .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    background: #333;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    border-top: 1px solid #575757;
+    display: none; /* Hides navigation links by default */
+    flex-direction: column; /* Stacks navigation links vertically */
+    width: 100%; /* Sets width to 100% */
+    text-align: center; /* Centers the text */
+    background: #333; /* Sets background color */
+    position: absolute; /* Positions the menu relative to the parent */
+    top: 60px; /* Positions the menu below the header */
+    left: 0; /* Aligns the menu to the left */
+    border-top: 1px solid #575757; /* Adds a border to the top of the menu */
   }
 
   .nav-links li {
-    margin: 10px 0;
+    margin: 10px 0; /* Adds margin between the links */
   }
 
   .nav-links.active {
-    display: flex;
+    display: flex; /* Displays the menu when active */
   }
 
   .job-list, .feature-list {
-    flex-direction: column;
+    flex-direction: column; /* Stacks job and feature items vertically on small screens */
   }
 }
 
 .cta-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #ff6347;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background 0.3s;
+  display: inline-block; /* Makes the button an inline-block element */
+  padding: 10px 20px; /* Adjusts padding inside the button */
+  background: #ff6347; /* Sets the background color of the button */
+  color: #fff; /* Sets the text color */
+  text-decoration: none; /* Removes underline from the button text */
+  border-radius: 5px; /* Adds rounded corners */
+  transition: background 0.3s; /* Adds a transition effect for background color */
 }
 
 .cta-button:hover {
-  background: #e5533d;
+  background: #e5533d; /* Changes background color on hover */
 }
 
 /* Additional styles for dropdowns in other pages */
 .dropdown {
-  margin: 10px 0;
+  margin: 10px 0; /* Adds margin around the dropdown */
 }
 
 .dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
+  background-color: #4CAF50; /* Sets the background color of the dropdown button */
+  color: white; /* Sets the text color */
+  padding: 16px; /* Adjusts the padding inside the button */
+  font-size: 16px; /* Sets the font size */
+  border: none; /* Removes border */
+  cursor: pointer; /* Changes cursor to pointer */
+  width: 100%; /* Sets width to 100% */
+  text-align: left; /* Aligns text to the left */
 }
 
 .dropdown-content {
-  display: none;
-  background-color: #f9f9f9;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
+  display: none; /* Hides the dropdown content by default */
+  background-color: #f9f9f9; /* Sets the background color */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Adds a box shadow */
+  padding: 12px 16px; /* Adjusts padding inside the dropdown content */
+  z-index: 1; /* Ensures the dropdown content is above other elements */
 }
 
 .dropdown-content p {
-  margin: 0;
+  margin: 0; /* Removes margin from paragraphs inside the dropdown */
 }
 
 .dropdown.active .dropdown-content {
-  display: block;
+  display: block; /* Displays the dropdown content when active */
 }
 
 .news-container {
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 20px;
+  margin: 0 auto; /* Centers the container */
+  max-width: 800px; /* Sets a maximum width */
+  padding: 20px; /* Adds padding inside the container */
 }
 
 .news-post {
-  margin-bottom: 40px;
-  padding: 20px;
-  background: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px; /* Adds bottom margin to separate posts */
+  padding: 20px; /* Adds padding inside the post */
+  background: #f9f9f9; /* Sets background color */
+  border-radius: 8px; /* Adds rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds a box shadow */
 }
 
 .news-post h2 {
-  margin-top: 0;
-  font-size: 24px;
+  margin-top: 0; /* Removes top margin from the heading */
+  font-size: 24px; /* Sets the font size */
 }
 
 .post-date {
-  color: #888;
-  margin-bottom: 10px;
+  color: #888; /* Sets the color of the date */
+  margin-bottom: 10px; /* Adds bottom margin */
 }
 
 .post-image {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 15px;
-  border-radius: 5px;
+  max-width: 100%; /* Sets maximum width to 100% */
+  height: auto; /* Adjusts height automatically */
+  margin-bottom: 15px; /* Adds bottom margin */
+  border-radius: 5px; /* Adds rounded corners */
 }
 
 .post-content {
-  font-size: 16px;
+  font-size: 16px; /* Sets the font size */
 }
 
 .post-divider {
-  border: 0;
-  height: 1px;
-  background: #ddd;
-  margin: 40px 0;
+  border: 0; /* Removes border */
+  height: 1px; /* Sets the height */
+  background: #ddd; /* Sets the background color */
+  margin: 40px 0; /* Adds top and bottom margin */
 }
 
 .job-list, .feature-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  display: flex; /* Uses flexbox for layout */
+  flex-wrap: wrap; /* Allows items to wrap */
+  gap: 20px; /* Adds space between items */
 }
 
 .job-role, .feature-item {
-  background: #f9f9f9;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  flex: 1 1 calc(50% - 20px);
-  min-width: 250px;
+  background: #f9f9f9; /* Sets background color */
+  border-radius: 8px; /* Adds rounded corners */
+  padding: 20px; /* Adds padding inside the element */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds a box shadow */
+  flex: 1 1 calc(50% - 20px); /* Sets flex properties for responsive layout */
+  min-width: 250px; /* Sets a minimum width */
 }
 
 .job-role h4, .feature-item h4 {
-  margin-top: 0;
+  margin-top: 0; /* Removes top margin from headings */
 }
 
 .contact-content {
-  text-align: center;
+  text-align: center; /* Centers the text */
 }
 
 .content-wrapper {
-  padding-left: 10px; /* Adjust the value as needed */
+  padding-left: 10px; /* Adjust the padding as needed */
 }
 
 /* Style for horizontal rule */
 hr {
-  border: 0;
-  height: 1px;
-  background: #ddd;
-  margin: 2em 0;
+  border: 0; /* Removes border */
+  height: 1px; /* Sets the height */
+  background: #ddd; /* Sets the background color */
+  margin: 2em 0; /* Adds top and bottom margin */
 }
