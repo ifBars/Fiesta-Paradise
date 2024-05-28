@@ -27,7 +27,7 @@ nav {
 }
 
 .logo-container a {
-  display: inline-block; /* Makes the link an inline-block element */
+  display: inline-block; /* Makes the logo an inline-block element */
 }
 
 .logo {
