@@ -17,6 +17,12 @@ nav {
   align-items: center;
 }
 
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
 .logo-container {
   margin-right: 20px; /* Adjusted margin for the logo */
 }
@@ -92,10 +98,6 @@ nav {
 
   .nav-links.active {
     display: flex;
-  }
-  
-  .hero-overlay {
-    top: 40%;
   }
 
   .job-list, .feature-list {
