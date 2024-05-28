@@ -17,6 +17,25 @@ nav {
   align-items: center;
 }
 
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  opacity: 0.8;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .logo-container {
   margin-right: 20px; /* Adjusted margin for the logo */
 }
@@ -94,6 +113,10 @@ nav {
     display: flex;
   }
   
+  .hero-overlay {
+    top: 40%;
+  }
+
   .job-list, .feature-list {
     flex-direction: column;
   }
@@ -101,7 +124,7 @@ nav {
 
 .cta-button {
   display: inline-block;
-  padding: 30px 40px;
+  padding: 10px 20px;
   background: #ff6347;
   color: #fff;
   text-decoration: none;
