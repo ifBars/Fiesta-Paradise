@@ -112,6 +112,14 @@ nav {
   .nav-links.active {
     display: flex;
   }
+  
+  .hero-overlay {
+    top: 40%;
+  }
+
+  .job-list, .feature-list {
+    flex-direction: column;
+  }
 }
 
 .cta-button {
@@ -200,6 +208,29 @@ nav {
   height: 1px;
   background: #ddd;
   margin: 40px 0;
+}
+
+.job-list, .feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.job-role, .feature-item {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(50% - 20px);
+  min-width: 250px;
+}
+
+.job-role h4, .feature-item h4 {
+  margin-top: 0;
+}
+
+.contact-content {
+  text-align: center;
 }
 
 .content-wrapper {
